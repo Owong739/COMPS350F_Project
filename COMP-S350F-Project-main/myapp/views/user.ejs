@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <%- include('_head') %>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('_header') %>
+    <!-- CONTENT -->
+    <form action="/user" method="GET">
+        <label for="role" class="query__label">Role:</label>
+        <select id="role" class="query__input" name="role">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="student" <%= query.role === 'student' ? 'selected' : '' %>>Student</option>
+            <option value="teacher" <%= query.role === 'teacher' ? 'selected' : '' %>>Teacher</option>
+            <option value="admin" <%= query.role === 'admin' ? 'selected' : '' %>>Admin</option>
+        </select>
+        <label for="sex" class="query__label">Sex:</label>
+        <select id="sex" class="query__input" name="sex">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="male" <%= query.sex === 'male' ? 'selected' : '' %>>Male</option>
+            <option value="female" <%= query.sex === 'female' ? 'selected' : '' %>>Female</option>
+            <option value="other" <%= query.sex === 'other' ? 'selected' : '' %>>Other</option>
+        </select>
+        <label for="sort" class="query__label">Sort by:</label>
+        <select id="sort" class="query__input" name="sort">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="uid" <%= query.sort === 'uid' ? 'selected' : '' %>>User ID</option>
+            <option value="role" <%= query.sort === 'role' ? 'selected' : '' %>>Role</option>
+            <option value="name" <%= query.sort === 'name' ? 'selected' : '' %>>Name</option>
+            <option value="email" <%= query.sort === 'email' ? 'selected' : '' %>>Email</option>
+            <option value="sex" <%= query.sort === 'sex' ? 'selected' : '' %>>Sex</option>
+            <option value="birth" <%= query.sort === 'birth' ? 'selected' : '' %>>Birth Date</option>
+            <option value="phone" <%= query.sort === 'phone' ? 'selected' : '' %>>Phone Number</option>
+            <option value="address" <%= query.sort === 'address' ? 'selected' : '' %>>Address</option>
+        </select>
+        <button type="submit" class="btn btn--small">Search</button>
+      </form>
+    <% if (user.length === 0) { %>
+        <p>No results found.</p>
+      <% } else { %>
+        <div id="right_panel">
+        <div class="wrap-table">
+            <table>
+            <thead>
+                <tr>
+                <th scope="col" class="sticky-col">uid</th>
+                <th scope="col">role</th>
+                <th scope="col">name</th>
+                <th scope="col">email</th>
+                <th scope="col">sex</th>
+                <th scope="col">birth</th>
+                <th scope="col">phone</th>
+                <th scope="col">address</th>
+                <th scope="col" class="sticky-col sticky-col-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% user.forEach(user => { %>
+                <tr>
+                <td class="sticky-col" scope="row" data-label="uid">
+                    <div class="user__info">
+                    <label>
+                        <input type="checkbox" class="checkbox">
+                        <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        </span>
+                    </label>
+                    <div>
+                        <div class="user__id"><%= user.uid %></div>
+                    </div>
+                    </div>
+                </td>
+                <td data-label="role">
+                    <div><%= user.role %></div>
+                </td>
+                <td data-label="name">
+                    <span><%= user.name %></span>
+                </td>
+                <td data-label="email"><%= user.email %></td>
+                <td data-label="sex"><%= user.sex %></td>
+                <td data-label="birth"><%= user.birth_formatted %></td>
+                <td data-label="phone"><%= user.phone %></td>
+                <td data-label="address"><%= user.address %></td>
+                <td data-label="Actions" class="sticky-col sticky-col-right">
+                    <a href="user/<%= user.id %>/update" class="user__edit">Edit</a>
+                    <button class="btn btn--small btn--red delete-user-btn" id="<%= user.id %>" type="button">Delete</button>
+                </td>
+                </tr>
+                <% }); %>
+            </tbody>
+            </table>
+        </div>
+        </div> 
+    <% } %>
+    <!-- FOOTER -->
+    <%- include('_footer') %>
+  </body>
+</html>

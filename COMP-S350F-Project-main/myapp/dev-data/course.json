@@ -1,0 +1,62 @@
+[
+  {
+    "course_id": "HKMU001",
+    "name": "Introduction to Computer Science",
+    "description": "This course provides an introduction to computer science and programming.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU002",
+    "name": "Data Structures and Algorithms",
+    "description": "This course covers the fundamental data structures and algorithms used in computer science.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU003",
+    "name": "Database Systems",
+    "description": "This course covers the design and implementation of database systems.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU004",
+    "name": "Operating Systems",
+    "description": "This course covers the design and implementation of operating systems.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU005",
+    "name": "Computer Networks",
+    "description": "This course covers the design and implementation of computer networks.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU006",
+    "name": "Software Engineering",
+    "description": "This course covers the principles and practices of software engineering.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU007",
+    "name": "Artificial Intelligence",
+    "description": "This course covers the principles and practices of artificial intelligence.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU008",
+    "name": "Computer Graphics",
+    "description": "This course covers the principles and practices of computer graphics.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU009",
+    "name": "Human-Computer Interaction",
+    "description": "This course covers the principles and practices of human-computer interaction.",
+    "credits": 3
+  },
+  {
+    "course_id": "HKMU010",
+    "name": "Computer Security",
+    "description": "This course covers the principles and practices of computer security.",
+    "credits": 3
+  }
+]

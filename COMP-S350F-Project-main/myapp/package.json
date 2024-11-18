@@ -1,0 +1,40 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "description": "S350F project",
+  "scripts": {
+    "start": "nodemon server.js",
+    "debug": "ndb server.js",
+    "watch:js": "parcel watch ./public/javascripts/index.js --out-dir ./public/javascripts --out-file bundle.js --public-url .",
+    "build:js": "parcel watch ./public/javascripts/index.js --out-dir ./public/javascripts --out-file bundle.js --public-url ."
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.4",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "mongoose": "^8.0.0",
+    "morgan": "^1.9.1",
+    "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.1",
+    "xss-clean": "^0.1.4"
+  },
+  "engine": {
+    "node": "^16"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
